@@ -1,4 +1,4 @@
-
+package application;
 
 public class RedCommand implements ICommand {
     private TrafficLight light;

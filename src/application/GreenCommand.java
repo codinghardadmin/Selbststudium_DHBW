@@ -1,4 +1,4 @@
-
+package application;
 
 public class GreenCommand implements ICommand {
     private TrafficLight light;

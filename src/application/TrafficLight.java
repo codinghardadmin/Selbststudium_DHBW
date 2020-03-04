@@ -1,7 +1,12 @@
+package application;
 
 
 public class TrafficLight {
     private TrafficLightType type;
+    
+    public TrafficLight() {
+    	type = TrafficLightType.RED;
+    }
 
     public void setGreen() {
         type = TrafficLightType.GREEN;
@@ -12,7 +17,6 @@ public class TrafficLight {
     }
 
     public String toString() {
-    	// ?? green or red oder speicheradresse angezeigt?
-        return "trafficlight " + hashCode() + " : " + type.toString();
+        return "TRAFFICLIGHT(" + hashCode() + ", " + type.toString() + ")";
     }
 }
