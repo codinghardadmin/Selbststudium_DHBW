@@ -136,7 +136,7 @@ public enum Busdepot {
     	}
 	}
 	
-	public ParkingSpot getFreeParkingSpot() {
+	private ParkingSpot getFreeParkingSpot() {
     	for (ParkingSpot parkingSpot : this.parkingSpots) {
     		if (parkingSpot.isFree()) {
     			return parkingSpot;

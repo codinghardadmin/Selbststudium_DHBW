@@ -13,19 +13,19 @@ public class Sensor {
         listeners = new ArrayList<>();
     }
 
-    public void activation(MaintainancePlatform wartungsbuehne) {
+    public void activation(MaintainancePlatform platforms) {
         for (ISensorListener listener : listeners)
-            listener.activate(wartungsbuehne);
+            listener.activate(platforms);
     }
     
-    public void activation(Entrance einfahrt, SensorType sensorType) {
+    public void activation(Entrance entrance, SensorType sensorType) {
         for (ISensorListener listener : listeners)
-            listener.activate(einfahrt, sensorType);
+            listener.activate(entrance, sensorType);
     }
     
-    public void activation(ParkingSpot parkplatz, SensorType sensorType) {
+    public void activation(ParkingSpot parkingSpot, SensorType sensorType) {
         for (ISensorListener listener : listeners)
-            listener.activate(parkplatz, sensorType);
+            listener.activate(parkingSpot, sensorType);
     }
 
     public void addListener(ISensorListener listener) {
