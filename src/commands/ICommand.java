@@ -1,4 +1,4 @@
-package application;
+package commands;
 
 
 public interface ICommand {

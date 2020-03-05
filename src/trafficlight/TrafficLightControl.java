@@ -1,4 +1,6 @@
-package application;
+package trafficlight;
+
+import commands.ICommand;
 
 public class TrafficLightControl {
 	private ICommand command;

@@ -1,13 +1,30 @@
 package application;
 
-public class Parkplatz {
+import sensor.Sensor;
+import sensor.SensorType;
+import trafficlight.TrafficLight;
+
+public class ParkingSpot {
 	
 	private Sensor sensor;
 	private TrafficLight trafficLight;
 	private Bus bus;
+	private int id;
+	private int b;
+	private int h;
+	
+	private static int ID_COUNTER = 1;
+	
+	public boolean isFree() {
+		return bus == null;
+	}
 	
 	public Bus getBus() {
 		return bus;
+	}
+	
+	public int getId() {
+		return id;
 	}
 
 	public void setBus(Bus bus) {
@@ -15,15 +32,19 @@ public class Parkplatz {
 	}
 	
 	public void leave() {
-		System.out.println("Bus " + bus + " verl‰sst den Parkplatz");
+		System.out.println("Bus " + bus + " verl√§sst den Parkplatz " + this.toString());
 		sensor.activation(this, SensorType.LEAVE);
 		setBus(null);
 	}
 
-	public Parkplatz() {
+	public ParkingSpot(int i, int j) {
 		this.sensor = new Sensor();
-		sensor.addListener(Zentralrechner.instance);
+		sensor.addListener(ControlUnit.instance);
 		this.trafficLight = new TrafficLight();
+		this.id = ID_COUNTER;
+		ID_COUNTER++;
+		this.b = i;
+		this.h = j;
 	}
 	
 	public Sensor getSensor() {
@@ -43,9 +64,13 @@ public class Parkplatz {
 	}
 
 	public void enter() {
-		System.out.println("Bus " + bus + " f‰hrt in freien Parkplatz");
+		System.out.println("Bus " + bus + " f√§hrt in freien Parkplatz " + this.toString());
 		sensor.activation(this, SensorType.ENTER);
-		setBus(null);
+	}
+	
+	@Override
+	public String toString() {
+		return "PARKINGSLOT(id=" + this.id + ", b=" + b + ", h=" + h + ")";
 	}
 
 }

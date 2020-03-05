@@ -1,4 +1,4 @@
-package application;
+package trafficlight;
 
 public enum TrafficLightType {
 	GREEN, RED;

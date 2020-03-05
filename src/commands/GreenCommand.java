@@ -1,4 +1,6 @@
-package application;
+package commands;
+
+import trafficlight.TrafficLight;
 
 public class GreenCommand implements ICommand {
     private TrafficLight light;

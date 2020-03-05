@@ -6,6 +6,8 @@ public class Bus {
 	
 	private BusType busType;
 	private int id;
+
+	private ParkingSpot parkingSpot;
 	
 	public Bus(BusType busType) {
 		this.busType = busType;
@@ -24,6 +26,14 @@ public class Bus {
 	@Override
 	public String toString() {
 		return "BUS("+ busType + ", " + id + ")";
+	}
+
+	public void setParkingSpot(ParkingSpot parkingSpot) {
+		this.parkingSpot = parkingSpot;
+	}
+	
+	public ParkingSpot getParkingSpot() {
+		return parkingSpot;
 	}
 
 }

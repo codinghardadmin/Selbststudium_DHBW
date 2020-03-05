@@ -1,6 +1,10 @@
-package application;
+package sensor;
 
 import java.util.ArrayList;
+
+import application.MaintainancePlatform;
+import application.ParkingSpot;
+import entrance.Entrance;
 
 public class Sensor {
     private ArrayList<ISensorListener> listeners;
@@ -9,17 +13,17 @@ public class Sensor {
         listeners = new ArrayList<>();
     }
 
-    public void activation(Wartungsbuehne wartungsbuehne) {
+    public void activation(MaintainancePlatform wartungsbuehne) {
         for (ISensorListener listener : listeners)
             listener.activate(wartungsbuehne);
     }
     
-    public void activation(Einfahrt einfahrt, SensorType sensorType) {
+    public void activation(Entrance einfahrt, SensorType sensorType) {
         for (ISensorListener listener : listeners)
             listener.activate(einfahrt, sensorType);
     }
     
-    public void activation(Parkplatz parkplatz, SensorType sensorType) {
+    public void activation(ParkingSpot parkplatz, SensorType sensorType) {
         for (ISensorListener listener : listeners)
             listener.activate(parkplatz, sensorType);
     }

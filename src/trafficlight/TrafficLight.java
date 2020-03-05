@@ -1,11 +1,16 @@
-package application;
+package trafficlight;
 
 
 public class TrafficLight {
     private TrafficLightType type;
+    private int id;
+    
+    private static int ID_COUNTER = 1;
     
     public TrafficLight() {
     	type = TrafficLightType.RED;
+    	this.id = ID_COUNTER;
+    	ID_COUNTER++;
     }
 
     public void setGreen() {
@@ -15,8 +20,12 @@ public class TrafficLight {
     public void setRed() {
         type = TrafficLightType.RED;
     }
+    
+    public boolean isRed() {
+    	return type == TrafficLightType.RED;
+    }
 
     public String toString() {
-        return "TRAFFICLIGHT(" + hashCode() + ", " + type.toString() + ")";
+        return "TRAFFICLIGHT(" + id + ") ist nun: " + type.toString() + "";
     }
 }

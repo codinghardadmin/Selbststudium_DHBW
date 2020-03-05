@@ -1,4 +1,4 @@
-package application;
+package sensor;
 
 public enum SensorType {
 	ENTER, LEAVE;
